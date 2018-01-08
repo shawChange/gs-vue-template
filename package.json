@@ -11,12 +11,11 @@
     "online": "node build/online/online.js"
   },
   "dependencies": {
-    "axios": "^0.17.1",
     "element-ui": "^1.4.2",
     "vue": "^2.3.3",
     "vuex": "^2.3.1",
-    "vue-router": "^2.6.0",
-
+    "axios": "^0.16.2",
+    "vue-router": "^2.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

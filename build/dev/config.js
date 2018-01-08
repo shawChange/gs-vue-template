@@ -1,6 +1,6 @@
 let dev = {
   env:'dev',
-    port: 7002,
+    port: 8080,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
