@@ -68,8 +68,8 @@ module.exports = {
   plugins: [
     new TransferWebpackPlugin([
       {
-        from: './lib',
-        to: './lib'
+        from: './libs',
+        to: './libs'
       }
     ]),
     new webpack.DllReferencePlugin({
