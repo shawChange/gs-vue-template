@@ -7,7 +7,7 @@ module.exports = {
     vendor: ['vue/dist/vue.esm.js', 'vuex', 'element-ui', 'axios', 'vue-router']
   },
   output: {
-    path: path.join(__dirname, '../../lib/js'), // 打包后文件输出的位置
+    path: path.join(__dirname, '../../libs/js'), // 打包后文件输出的位置
     filename: '[name].dll.js',
     library: '[name]_library'
     // vendor.dll.js中暴露出的全局变量名。
@@ -16,7 +16,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DllPlugin({
-      path: path.join(__dirname, '../../lib/js', '[name]-manifest.json'),
+      path: path.join(__dirname, '../../libs/js', '[name]-manifest.json'),
       name: '[name]_library',
       context: __dirname
     }),
