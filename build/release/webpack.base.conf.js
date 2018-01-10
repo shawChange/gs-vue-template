@@ -12,7 +12,12 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/main.js',
+    vue: resolve('libs/vue-2.5.13/vue.esm.js'),
+    'vue-router': resolve('libs/vue-router-2.8.1/vue-router.esm.js'),
+    vuex: resolve('libs/vuex-2.5.0/vuex.esm.js'),
+    'gsum-uikit': resolve('libs/gsum-uikit-vue/index.js'),
+    axios: resolve('libs/axios-0.17.1/axios.js')
   },
   output: {
     path: config.assetsRoot,
@@ -23,11 +28,11 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': '../../libs/vue-2.5.13/vue.esm.js',
-      'vue-router': '../../libs/vue-router-2.8.1/vue-router.js',
-      'vuex': '../../libs/vuex-2.5.0/vuex.js',
-      'gsum-uikit-vue': '../../libs/gsum-uikit-vue/index.js',
-      'axios': '../../libs/axios-0.17.1/axios',
+      'vue$': resolve('libs/vue-2.5.13/vue.esm.js'),
+      'vue-router': resolve('libs/vue-router-2.8.1/vue-router.esm.js'),
+      'vuex': resolve('libs/vuex-2.5.0/vuex.esm.js'),
+      'gsum-uikit': resolve('libs/gsum-uikit-vue/index.js'),
+      'axios': resolve('libs/axios-0.17.1/axios.js'),
       '@': resolve('src')
     }
   },
@@ -72,9 +77,13 @@ module.exports = {
   plugins: [
     new TransferWebpackPlugin([
       {
-        from: './libs',
-        to: './libs'
+        from: './libs/gsum-uikit-vue/theme-default',
+        to: './libs/gsum-uikit-vue/theme-default'
       }
-    ])
+    ]),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ["axios", "vuex", "gsum-uikit", "vue-router","vue"],
+      minChunks: Infinity
+    })
   ]
 };
