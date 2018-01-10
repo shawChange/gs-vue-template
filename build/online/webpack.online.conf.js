@@ -82,16 +82,11 @@ var webpackConfig = merge(baseWebpackConfig, {
           /\.js$/.test(module.resource) &&
           module.resource.indexOf(
             path.join(__dirname, '../../node_modules') //注意此处路径，需要根据情况修改
-          ) === 0 && !module.resource.indexOf(
-            path.join(__dirname, '../../node_modules/vue') //注意此处路径，需要根据情况修改
-          ) === 0 && !module.resource.indexOf(
-            path.join(__dirname, '../../node_modules/vue-vuex') //注意此处路径，需要根据情况修改
-          ) === 0 && !module.resource.indexOf(
-            path.join(__dirname, '../../node_modules/element-ui') //注意此处路径，需要根据情况修改
           ) === 0
         )
       }
     }),
+
     // extract webpack runtime and module manifest to its own file in order to
     // prevent vendor hash from being updated whenever app bundle is updated
     new webpack.optimize.CommonsChunkPlugin({

@@ -6,7 +6,7 @@ var vueLoaderConfig = require('./vue-loader.conf');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 
 function resolve (dir) {
-  return path.join(__dirname, '../..', dir)
+  return path.join(__dirname, '../..', dir);
 }
 
 
@@ -23,7 +23,11 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      'vue$': '../../libs/vue-2.5.13/vue.esm.js',
+      'vue-router': '../../libs/vue-router-2.8.1/vue-router.js',
+      'vuex': '../../libs/vuex-2.5.0/vuex.js',
+      'gsum-uikit-vue': '../../libs/gsum-uikit-vue/index.js',
+      'axios': '../../libs/axios-0.17.1/axios',
       '@': resolve('src')
     }
   },
@@ -71,10 +75,6 @@ module.exports = {
         from: './libs',
         to: './libs'
       }
-    ]),
-    new webpack.DllReferencePlugin({
-      context: __dirname,
-      manifest: require('../../libs/js/vendor-manifest.json')
-    }),
+    ])
   ]
-}
+};
