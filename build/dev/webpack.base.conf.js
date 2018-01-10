@@ -25,9 +25,9 @@ module.exports = {
     alias: {
       'vue$': '../../libs/vue-2.5.13/vue.js',
       'vue-router': '../../libs/vue-router-2.8.1/vue-router.js',
-      'vuex': '../../libs/vuex-2.5.0/vuex.esm.js',
-      'gsum-uikit': '../../libs/gsum-uikit-vue/index.js',
-      'axios': '../../libs/axios-0.17.1/axios.js',
+      'vuex': resolve('libs/vuex-2.5.0/vuex.esm.js'),
+      'gsum-uikit': resolve('libs/gsum-uikit-vue/index.js'),
+      'axios': resolve('libs/axios-0.17.1/axios.js'),
       '@': resolve('src')
     }
   },
