@@ -1,27 +1,15 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./images/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  name: 'app'
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin-top: 60px;
-}
-</style>
+<style src="./styles/index.scss" lang="scss"></style>
