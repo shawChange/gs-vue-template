@@ -1,0 +1,49 @@
+.pointer {
+  cursor: pointer;
+}
+
+.is-bold {
+  font-weight: bold;
+}
+
+
+.primary-text {
+  color: $primaryText;
+}
+
+.small-text {
+  color: $smallText;
+}
+
+.system-color {
+  color: $systemColor;
+}
+
+.white-text {
+  color: white;
+}
+
+.blue {
+  color: $Blue;
+}
+
+.info {
+  color: $Info;
+}
+
+.warning {
+  color: $Warning;
+}
+
+.error {
+  color: red;
+}
+
+.danger {
+  color: $Danger;
+}
+
+.success {
+  color: $Success;
+}
+

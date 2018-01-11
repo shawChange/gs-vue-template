@@ -6,13 +6,13 @@ var vueLoaderConfig = require('./vue-loader.conf');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 
 function resolve (dir) {
-  return path.join(__dirname, '../..', dir)
+  return path.join(__dirname, '../..', dir);
 }
 
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/main.js',
   },
   output: {
     path: config.assetsRoot,
@@ -23,9 +23,15 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src')
     }
+  },
+  externals: {
+    "vue": "Vue" ,
+    "vue-router":"VueRouter" ,
+    "vuex":'Vuex',
+    "axios":"axios",
+    "gsum-uikit-vue": "GsumUikit"
   },
   module: {
     rules: [
@@ -68,13 +74,9 @@ module.exports = {
   plugins: [
     new TransferWebpackPlugin([
       {
-        from: './lib',
-        to: './lib'
+        from: './libs',
+        to: './libs'
       }
-    ]),
-    new webpack.DllReferencePlugin({
-      context: __dirname,
-      manifest: require('../../lib/js/vendor-manifest.json')
-    }),
+    ])
   ]
-}
+};
