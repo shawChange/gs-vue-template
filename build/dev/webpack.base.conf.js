@@ -3,6 +3,7 @@ var webpack = require('webpack')
 var utils = require('./utils')
 var config = require('./config');
 var vueLoaderConfig = require('./vue-loader.conf');
+var sassLintPlugin = require('sasslint-webpack-plugin');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 
 function resolve (dir) {
@@ -83,6 +84,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new sassLintPlugin({
+      configFile: '.sass-lint.yml',
+      glob: 'src/**/*.s?(a|c)ss'
+    }),
     new TransferWebpackPlugin([
       {
         from: './libs',
