@@ -3,10 +3,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './vuex/store'
 import router from './router'
-import ElementUI from 'gsum-uikit'
+// import ElementUI from 'gsum-uikit'
 
 Vue.config.productionTip = false
-Vue.use(ElementUI)
+// Vue.use(ElementUI)
 let vueConfig = new Vue({
   el: '#app',
   router,
