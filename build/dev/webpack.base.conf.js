@@ -53,6 +53,16 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
+        test: /\.vue$/,
+        loader: 'htmllint-loader',
+        exclude: /(node_modules)/,
+        query: {
+          config: '.htmllintrc', // path to custom config file
+          failOnError: false,
+          failOnWarning: false,
+        }
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
@@ -73,14 +83,14 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       },
-        {
-            test: /\.xlsx$/,
-            loader: 'url-loader',
-            options: {
-                limit: 10000,
-                name: utils.assetsPath('excel/[name].[hash:7].[ext]')
-            }
+      {
+        test: /\.xlsx$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: utils.assetsPath('excel/[name].[hash:7].[ext]')
         }
+      }
     ]
   },
   plugins: [
