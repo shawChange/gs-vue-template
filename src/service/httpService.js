@@ -1,5 +1,10 @@
 import axios from 'axios'
 import HttpInspectors from './httpInspectors'
+import {Message} from 'ELEMENT'
+
+HttpInspectors.setCallback('httpError', (error) => {
+  Message({type: 'error', message: error.errorMessage})
+})
 
 var http = function (method, url, queryParams, data, options) {
   let headers = HttpInspectors.setConfig(options)

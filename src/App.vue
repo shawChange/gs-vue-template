@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <img src="./images/logo.png">
-    <router-view/>
+    <div class="parent-div">
+      <div class="vue-img"></div>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -12,4 +14,3 @@ export default {
 }
 </script>
 
-<style src="./styles/index.scss" lang="scss"></style>

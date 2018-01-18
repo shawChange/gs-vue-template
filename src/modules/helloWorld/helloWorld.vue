@@ -1,15 +1,15 @@
 <template>
   <div>
     <h1>{{message}}</h1>
-    <HelloWorld></HelloWorld>
+    <hello-world></hello-world>
   </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld.vue'
-import '../service/testHttpService'
+import helloWorld from '../../components/helloWorld.vue'
+import '../../service/testHttpService'
 export default {
-  components: {HelloWorld},
+  components: {helloWorld},
   name: 'HelloPage',
   data () {
     return {}
