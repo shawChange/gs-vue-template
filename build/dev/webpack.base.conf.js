@@ -1,5 +1,4 @@
 var path = require('path')
-var webpack = require('webpack')
 var utils = require('./utils')
 var config = require('./config');
 var vueLoaderConfig = require('./vue-loader.conf');
@@ -42,7 +41,7 @@ module.exports = {
     "vue-router":"VueRouter" ,
     "vuex":'Vuex',
     "axios":"axios",
-    "gsum-uikit-vue": "GsumUikit"
+    "ELEMENT": "ELEMENT"
   },
   module: {
     rules: [
@@ -71,8 +70,8 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+          limit: 1,
+          name: utils.assetsPath('assets/images/[name].[ext]')
         }
       },
       {

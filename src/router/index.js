@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import HelloWorld from '@/modules/HelloWorld'
+import HelloWorld from '../modules/helloWorld/helloWorld.vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 

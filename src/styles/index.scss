@@ -1,16 +1,20 @@
-@import "variables/colors";
+@import './variables/colors';
 
-@import "base/normalize";
-@import "base/baseMargin";
-@import "base/basePadding";
-@import "base/baseLayout";
-@import "base/baseStyle";
+@import './base/base';
 
-@import "common/layout";
+@import './common/common';
 
-@import "components/helloWorld";
+@import './components/components';
 
-@import "modules/helloWorld";
+@import './modules/modules';
+
+
+
+
+
+
+
+
 
 
 
